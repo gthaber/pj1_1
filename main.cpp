@@ -3,9 +3,7 @@
 // Контейнер на основе однонаправленного кольцевого списка.
 // Разбиение на модули осуществляется по объектному принципу.
 // Обобщение, построенное на основе непосредственного включения специализаций.
-
-#include <iostream>
-#include <fstream>
+#include "transport.h"
 
 using namespace std;
 
@@ -19,10 +17,11 @@ int main(int argc, char* argv[]) {
     ifstream ifst(argv[1]);
     ofstream ofst(argv[2]);
     cout << "START"<< endl;
-     c{};
-    In(c, ifst);
-    Out(c, ofst);
-    Clear(c);
+    container c;
+    containerInit(c);
+    Read_Container(ifst, c);
+    Out_Container(ofst, c);
+    containerClear(c);
     cout << "END"<< endl;
     return 0;
 }
