@@ -11,7 +11,7 @@ struct planes {
     int carry;
 };
 
-inline bool Read_Plane(planes&pl, std::ifstream& stream);
-inline void Out_Planes(std::ofstream& stream, planes &pl);
+bool Read_Plane(planes&pl, std::ifstream& stream);
+void Out_Planes(std::ofstream& stream, planes &pl);
 
 #endif //PR1_1_PLANES_H
