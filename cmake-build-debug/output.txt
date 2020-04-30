@@ -1,3 +1,3 @@
-1. Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
-2. Speed: 800; Distance: 8; Type: Train; Length: 120;
-3. Speed: 1; Distance: 1; Type: Planes; Range: 1; Carry: 21;
+1. Speed: 150; Distance: 1000; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+2. Speed: 800; Distance: 8; Mass: 1; Type: Train; Length: 120;
+3. Speed: 1; Distance: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;

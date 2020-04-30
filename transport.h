@@ -16,6 +16,7 @@ struct transport {
     T_type tr_type;
     int speed;
     int distance;
+    double mass;
     union{
         planes pl;
         train tr;
