@@ -5,7 +5,7 @@
 transport *Read_Transport(std::ifstream &stream) {
     int type;
     stream >> type;
-    if(type < 1 || type > 2) {
+    if(type < 1 || type > 3) {
         std::cout << "Input error." << std::endl;
         return nullptr;
     }
@@ -21,6 +21,11 @@ transport *Read_Transport(std::ifstream &stream) {
             Read_Train(temp_t->u.tr, stream);
             temp_t->tr_type = T_type::TRAIN;
             break;
+        case T_type::SHIP:
+            temp_t = new transport();
+            Read_Ship(temp_t->u.sh, stream);
+            temp_t->tr_type = T_type::SHIP;
+            break;
         default:
             return temp_t;
     }
@@ -29,23 +34,6 @@ transport *Read_Transport(std::ifstream &stream) {
     if(!stream.eof()) stream >> temp_t->distance;
     else delete temp_t;
     return temp_t;
-}
-
-bool Read_Plane(planes&pl, std::ifstream &stream) {
-    if(!stream.eof())
-        stream >> pl.range;
-    else return false;
-    if(!stream.eof())
-        stream >> pl.carry;
-    else return false;
-    return true;
-}
-
-bool Read_Train(train&tr, std::ifstream &stream) {
-    if(!stream.eof())
-        stream >> tr.length;
-    else return false;
-    return true;
 }
 
 void Out_Transport(std::ofstream &stream, transport *tran) {
@@ -59,13 +47,9 @@ void Out_Transport(std::ofstream &stream, transport *tran) {
             stream << "Train";
             Out_Train(stream, tran->u.tr);
             break;
+        case T_type::SHIP:
+            stream << "Ship";
+            Out_Ship(stream, tran->u.sh);
+            break;
     }
-}
-
-void Out_Planes(std::ofstream &stream, planes &pl) {
-    stream << "; Range: " << pl.range << "; Carry: " << pl.carry << ";" << std::endl;
-}
-
-void Out_Train(std::ofstream &stream, train &tr) {
-    stream << "; Length: " << tr.length << ";" << std::endl;
 }

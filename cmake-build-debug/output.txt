@@ -1,3 +1,4 @@
 1. Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
 2. Speed: 800; Distance: 8; Type: Train; Length: 120;
 3. Speed: 1; Distance: 1; Type: Planes; Range: 1; Carry: 21;
+4. Speed: 45; Distance: 900; Type: Ship; Displacement: 451; Ship type: Tug;
