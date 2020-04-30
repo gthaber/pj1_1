@@ -48,12 +48,12 @@ void Out_Container(std::ofstream &stream, container &con) {
 
 void Sort(container &con) {
     element *el1 = con.starting;
-    for(int i = 0; i < con.size-1; i++) {
+    for (int i = 0; i < con.size - 1; i++) {
         element *el2 = el1;
         el2 = el2->forward;
-        for(int j = 0; j < con.size-1-i; j++) {
+        for (int j = 0; j < con.size - 1 - i; j++) {
             //std::cout << "checking " << Estimate_Time(el1->t) << ";" << Estimate_Time(el2->t) << std::endl;
-            if(Comparator(el1->t, el2->t)) {
+            if (Comparator(el1->t, el2->t)) {
                 transport *el_temp = el1->t;
                 el1->t = el2->t;
                 el2->t = el_temp;
@@ -61,6 +61,17 @@ void Sort(container &con) {
             el2 = el2->forward;
         }
         el1 = el1->forward;
+    }
+}
+
+void Out_Container(std::ofstream &stream, container &con, T_type but) {
+    element *el = con.starting;
+    for(int i = 0; i < con.size; i++) {
+        if(el->t->tr_type != but) {
+            stream << i+1 << ". ";
+            Out_Transport(stream, el->t);
+        }
+        el = el->forward;
     }
 }
 
