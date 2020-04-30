@@ -24,5 +24,6 @@ struct transport {
 
 transport* Read_Transport(std::ifstream&stream);
 void Out_Transport(std::ofstream& stream, transport*tran);
+int Estimate_Time(transport*tran);
 
 #endif //PR1_1_TRANSPORT_H

@@ -14,3 +14,4 @@ bool Read_Plane(planes&pl, std::ifstream &stream) {
 void Out_Planes(std::ofstream &stream, planes &pl) {
     stream << "; Range: " << pl.range << "; Carry: " << pl.carry << ";" << std::endl;
 }
+
