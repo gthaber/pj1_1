@@ -25,5 +25,6 @@ struct transport {
 transport* Read_Transport(std::ifstream&stream);
 void Out_Transport(std::ofstream& stream, transport*tran);
 int Estimate_Time(transport*tran);
+bool Comparator(transport*q1, transport*q2);
 
 #endif //PR1_1_TRANSPORT_H

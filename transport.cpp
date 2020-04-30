@@ -50,3 +50,7 @@ int Estimate_Time(transport *tran) {
     // Идеальное время прохождения пути (действительное число)
     return tran->distance / tran->speed;
 }
+
+bool Comparator(transport *q1, transport *q2) {
+    return Estimate_Time(q1) < Estimate_Time(q2);
+}
