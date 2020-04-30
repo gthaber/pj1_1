@@ -21,6 +21,7 @@ void containerClear(container&con);
 void containerInit(container&con);
 void containerAdd(element*, container&con);
 void Read_Container(std::ifstream& stream, container&con);
+void Out_Container(std::ofstream& stream, container&con, T_type but);
 void Out_Container(std::ofstream& stream, container&con);
 
 #endif //PR1_1_CONTAINER_H

@@ -21,6 +21,10 @@ int main(int argc, char* argv[]) {
     containerInit(c);
     Read_Container(ifst, c);
     Out_Container(ofst, c);
+    ofst << "Ignoring type 1:" << std::endl;
+    Out_Container(ofst, c, T_type::TRAIN);
+    ofst << "Ignoring type 2:" << std::endl;
+    Out_Container(ofst, c, T_type::PLANES);
     containerClear(c);
     cout << "END"<< endl;
     return 0;

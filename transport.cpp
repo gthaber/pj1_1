@@ -31,23 +31,6 @@ transport *Read_Transport(std::ifstream &stream) {
     return temp_t;
 }
 
-bool Read_Plane(planes&pl, std::ifstream &stream) {
-    if(!stream.eof())
-        stream >> pl.range;
-    else return false;
-    if(!stream.eof())
-        stream >> pl.carry;
-    else return false;
-    return true;
-}
-
-bool Read_Train(train&tr, std::ifstream &stream) {
-    if(!stream.eof())
-        stream >> tr.length;
-    else return false;
-    return true;
-}
-
 void Out_Transport(std::ofstream &stream, transport *tran) {
     stream << "Speed: " << tran->speed << "; Distance: " << tran->distance << "; Type: ";
     switch (tran->tr_type) {
@@ -60,12 +43,4 @@ void Out_Transport(std::ofstream &stream, transport *tran) {
             Out_Train(stream, tran->u.tr);
             break;
     }
-}
-
-void Out_Planes(std::ofstream &stream, planes &pl) {
-    stream << "; Range: " << pl.range << "; Carry: " << pl.carry << ";" << std::endl;
-}
-
-void Out_Train(std::ofstream &stream, train &tr) {
-    stream << "; Length: " << tr.length << ";" << std::endl;
 }
