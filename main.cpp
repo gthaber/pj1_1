@@ -3,11 +3,20 @@
 // Контейнер на основе однонаправленного кольцевого списка.
 // Разбиение на модули осуществляется по объектному принципу.
 // Обобщение, построенное на основе непосредственного включения специализаций.
+#include <gtest/gtest.h>
 #include "container.h"
+const bool Testing = true;
+int RunTests() {
+    testing::InitGoogleTest();
+    return RUN_ALL_TESTS();
+}
 
 using namespace std;
 
 int main(int argc, char* argv[]) {
+    if(Testing) {
+        return RunTests();
+    }
     if(argc !=3) {
         cout << "incorrect command line! " << endl
              << "Waited: command in_file out_file"
