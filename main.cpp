@@ -5,7 +5,7 @@
 // Обобщение, построенное на основе непосредственного включения специализаций.
 #include <gtest/gtest.h>
 #include "container.h"
-const bool Testing = false;
+const bool TESTING = false;
 int RunTests() {
     testing::InitGoogleTest();
     return RUN_ALL_TESTS();
@@ -14,7 +14,7 @@ int RunTests() {
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    if(Testing) {
+    if(TESTING) {
         return RunTests();
     }
     if(argc !=3) {
@@ -31,17 +31,17 @@ int main(int argc, char* argv[]) {
     }
     cout << "START"<< endl;
     container c;
-    containerInit(c);
-    Read_Container(ifst, c);
-    Out_Container(ofst, c);
+    ContainerInit(c);
+    ReadContainer(ifst, c);
+    OutContainer(ofst, c);
     ofst << "Sorted container:" << std::endl;
     Sort(c);
-    Out_Container(ofst, c);
+    OutContainer(ofst, c);
     ofst << "Ignoring type 1:" << std::endl;
-    Out_Container(ofst, c, T_type::TRAIN);
+    OutContainer(ofst, c, t_type::TRAIN);
     ofst << "Ignoring type 2:" << std::endl;
-    Out_Container(ofst, c, T_type::PLANES);
-    containerClear(c);
+    OutContainer(ofst, c, t_type::PLANES);
+    ContainerClear(c);
     cout << "END"<< endl;
     return 0;
 }

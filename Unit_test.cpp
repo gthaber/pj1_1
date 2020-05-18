@@ -11,7 +11,7 @@
 TEST(test1, T_Input) {
     std::string inp_file = "input.txt";
     std::ifstream ifstr(inp_file);
-    transport* checking_tr = Read_Transport(ifstr);
+    transport* checking_tr = ReadTransport(ifstr);
     bool ok1 = checking_tr->tr_type == 1;
     bool ok2 = checking_tr->distance == 1000;
     bool ok3 = checking_tr->speed == 150;
@@ -26,8 +26,8 @@ TEST(test1, T_Input) {
 TEST(test2, T_Input) {
     std::string inp_file = "input.txt";
     std::ifstream ifstr(inp_file);
-    transport* checking_tr = Read_Transport(ifstr);
-    bool ok = Estimate_Time(checking_tr) == checking_tr->distance / checking_tr->speed;
+    transport* checking_tr = ReadTransport(ifstr);
+    bool ok = EstimateTime(checking_tr) == checking_tr->distance / checking_tr->speed;
     delete checking_tr;
     EXPECT_TRUE(ok);
 }
@@ -36,12 +36,12 @@ TEST(test3, T_Input) {
     std::string inp_file = "input.txt";
     std::ifstream ifstr(inp_file);
     container c;
-    containerInit(c);
-    Read_Container(ifstr, c);
+    ContainerInit(c);
+    ReadContainer(ifstr, c);
     element *el = c.starting;
     Sort(c);
     for(int i = 0; i < c.size-1; i++) {
-        EXPECT_TRUE(Estimate_Time(el->t) >= Estimate_Time(el->forward->t));
+        EXPECT_TRUE(EstimateTime(el->t) >= EstimateTime(el->forward->t));
         el = el->forward;
     }
 }
@@ -52,13 +52,13 @@ TEST(test4, T_Input) {
     std::ifstream ifstr(inp_file);
     std::ofstream ofstr(out_file);
     container c;
-    containerInit(c);
-    Read_Container(ifstr, c);
+    ContainerInit(c);
+    ReadContainer(ifstr, c);
     element *el = c.starting;
-    int count1 = Out_Container(ofstr, c, T_type::TRAIN);
+    int count1 = OutContainer(ofstr, c, t_type::TRAIN);
     int count_actual = 0;
     for(int i = 0; i < c.size; i++) {
-        if(el->t->tr_type != T_type::TRAIN) {
+        if(el->t->tr_type != t_type::TRAIN) {
             count_actual++;
         }
         el = el->forward;

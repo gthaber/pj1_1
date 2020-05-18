@@ -17,12 +17,12 @@ struct container {
     int size;
 };
 
-void containerClear(container&con);
-void containerInit(container&con);
-void containerAdd(element*, container&con);
-void Read_Container(std::ifstream& stream, container&con);
-int Out_Container(std::ofstream& stream, container&con, T_type but);
-void Out_Container(std::ofstream& stream, container&con);
+void ContainerClear(container&con);
+void ContainerInit(container&con);
+void ContainerAdd(element *el, container&con);
+void ReadContainer(std::ifstream& stream, container&c);
+int OutContainer(std::ofstream& stream, container&con, t_type but);
+void OutContainer(std::ofstream& stream, container&con);
 void Sort(container&con);
 
 #endif //PR1_1_CONTAINER_H

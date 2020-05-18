@@ -9,7 +9,7 @@ struct train {
     int length;
 };
 
-bool Read_Train(train&tr, std::ifstream& stream);
-void Out_Train(std::ofstream& stream, train &tr);
+bool ReadTrain(train&tr, std::ifstream& stream);
+void OutTrain(std::ofstream& stream, train &tr);
 
 #endif //PR1_1_TRAIN_H

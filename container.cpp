@@ -1,17 +1,17 @@
 
 #include "container.h"
 
-void Read_Container(std::ifstream &stream, container &c) {
+void ReadContainer(std::ifstream &stream, container &c) {
     while(!stream.eof()) {
-        transport *temp_tr = Read_Transport(stream);
+        transport *temp_tr = ReadTransport(stream);
         if (temp_tr == nullptr) return; // Если не считалось, то ошибка
         element *el = new element{};
         el->t = temp_tr;
-        containerAdd(el, c);
+        ContainerAdd(el, c);
     }
 }
 
-void containerAdd(element *el, container&con) {
+void ContainerAdd(element *el, container&con) {
     con.size++;
     if(con.starting == nullptr) {
         con.starting = con.ending = el;
@@ -22,12 +22,12 @@ void containerAdd(element *el, container&con) {
     }
 }
 
-void containerInit(container &con) {
+void ContainerInit(container &con) {
     con.size = 0;
     con.starting = con.ending = nullptr;
 }
 
-void containerClear(container &con) {
+void ContainerClear(container &con) {
     element *el = con.starting;
     for(int i = 0; i < con.size; i++) {
         delete el->t;
@@ -37,11 +37,11 @@ void containerClear(container &con) {
     }
 }
 
-void Out_Container(std::ofstream &stream, container &con) {
+void OutContainer(std::ofstream &stream, container &con) {
     element *el = con.starting;
     for(int i = 0; i < con.size; i++) {
         stream << i+1 << ". ";
-        Out_Transport(stream, el->t);
+        OutTransport(stream, el->t);
         el = el->forward;
     }
 }
@@ -52,7 +52,7 @@ void Sort(container &con) {
         element *el2 = el1;
         el2 = el2->forward;
         for (int j = 0; j < con.size - 1 - i; j++) {
-            //std::cout << "checking " << Estimate_Time(el1->t) << ";" << Estimate_Time(el2->t) << std::endl;
+            //std::cout << "checking " << Estimate_Time(el1->t) << ";" << EstimateTime(el2->t) << std::endl;
             if (Comparator(el1->t, el2->t)) {
                 transport *el_temp = el1->t;
                 el1->t = el2->t;
@@ -64,14 +64,14 @@ void Sort(container &con) {
     }
 }
 
-int Out_Container(std::ofstream &stream, container &con, T_type but) {
+int OutContainer(std::ofstream &stream, container &con, t_type but) {
     element *el = con.starting;
     int count1 = 0;
     for(int i = 0; i < con.size; i++) {
         if(el->t->tr_type != but) {
             count1++;
             stream << i+1 << ". ";
-            Out_Transport(stream, el->t);
+            OutTransport(stream, el->t);
         }
         el = el->forward;
     }

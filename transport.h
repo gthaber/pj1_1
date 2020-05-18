@@ -8,14 +8,14 @@
 #include "train.h"
 #include "ship.h"
 
-enum T_type {
+enum t_type {
     PLANES=1,
     TRAIN=2,
     SHIP=3
 };
 
 struct transport {
-    T_type tr_type;
+    t_type tr_type;
     int speed;
     int distance;
     double mass;
@@ -26,9 +26,9 @@ struct transport {
     } u;
 };
 
-transport* Read_Transport(std::ifstream&stream);
-void Out_Transport(std::ofstream& stream, transport*tran);
-int Estimate_Time(transport*tran);
+transport* ReadTransport(std::ifstream&stream);
+void OutTransport(std::ofstream& stream, transport*tran);
+int EstimateTime(transport*tran);
 bool Comparator(transport*q1, transport*q2);
 
 #endif //PR1_1_TRANSPORT_H
