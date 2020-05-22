@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
     containerInit(c);
     Read_Container(ifst, c);
     Out_Container(ofst, c);
+    Multi(c, ofst);
     containerClear(c);
     cout << "END"<< endl;
     return 0;

@@ -1,3 +1,22 @@
 1. Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
 2. Speed: 800; Distance: 8; Type: Train; Length: 120;
 3. Speed: 1; Distance: 1; Type: Planes; Range: 1; Carry: 21;
+_.-._.-._.-._.-MULTIMETHOD-._.-._.-._.-._
+| Planes + Train |
+Speed: 800; Distance: 8; Type: Train; Length: 120;
+Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
+| Planes + Train |
+Speed: 800; Distance: 8; Type: Train; Length: 120;
+Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
+| Train + Planes |
+Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
+Speed: 800; Distance: 8; Type: Train; Length: 120;
+| Train + Train |
+Speed: 800; Distance: 8; Type: Train; Length: 120;
+Speed: 800; Distance: 8; Type: Train; Length: 120;
+| Planes + Planes |
+Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
+Speed: 1; Distance: 1; Type: Planes; Range: 1; Carry: 21;
+| Planes + Planes |
+Speed: 150; Distance: 1000; Type: Planes; Range: 400; Carry: 1225;
+Speed: 1; Distance: 1; Type: Planes; Range: 1; Carry: 21;

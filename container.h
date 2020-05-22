@@ -16,7 +16,7 @@ struct container {
     element* ending;
     int size;
 };
-
+void Multi(container &con, std::ofstream &ofstr);
 void containerClear(container&con);
 void containerInit(container&con);
 void containerAdd(element*, container&con);
