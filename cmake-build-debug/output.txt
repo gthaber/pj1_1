@@ -1,3 +1,26 @@
 1. Speed: 150; Distance: 1000; Time: 6; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+2. Speed: 800; Distance: 8; Time: 0; Mass: 1; Type: Train; Length: 120;
 3. Speed: 1; Distance: 456; Time: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;
-4. Speed: 45; Distance: 900; Time: 20; Mass: 44.05; Type: Ship; Displacement: 451; Ship type: Tug;
+Sorted container:
+1. Speed: 1; Distance: 456; Time: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;
+2. Speed: 150; Distance: 1000; Time: 6; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+3. Speed: 800; Distance: 8; Time: 0; Mass: 1; Type: Train; Length: 120;
+_.-._.-._.-._.-MULTIMETHOD-._.-._.-._.-._
+| Planes + Planes |
+Speed: 150; Distance: 1000; Time: 6; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+Speed: 1; Distance: 456; Time: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;
+| Planes + Planes |
+Speed: 150; Distance: 1000; Time: 6; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+Speed: 1; Distance: 456; Time: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;
+| Planes + Planes |
+Speed: 1; Distance: 456; Time: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;
+Speed: 150; Distance: 1000; Time: 6; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+| Planes + Planes |
+Speed: 150; Distance: 1000; Time: 6; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+Speed: 150; Distance: 1000; Time: 6; Mass: 45.5; Type: Planes; Range: 400; Carry: 1225;
+| Train + Planes |
+Speed: 1; Distance: 456; Time: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;
+Speed: 800; Distance: 8; Time: 0; Mass: 1; Type: Train; Length: 120;
+| Train + Planes |
+Speed: 1; Distance: 456; Time: 456; Mass: 0.1; Type: Planes; Range: 21; Carry: 1;
+Speed: 800; Distance: 8; Time: 0; Mass: 1; Type: Train; Length: 120;

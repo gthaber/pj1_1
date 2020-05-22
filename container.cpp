@@ -78,3 +78,75 @@ int OutContainer(std::ofstream &stream, container &con, t_type but) {
     return count1;
 }
 
+void Multi(container &con, std::ofstream &ofstr) {
+    ofstr << "_.-._.-._.-._.-MULTIMETHOD-._.-._.-._.-._" << std::endl;
+    element *el1 = con.starting;
+    element *el2 = con.starting;
+    for(int i = 0; i < con.size; i++) {
+        el2 = con.starting;
+        for(int j = 0; j < con.size; j++) {
+            if(i == j) {
+                el2 = el2->forward;
+                continue;
+            }
+            switch(el1->t->tr_type) {
+                case PLANES:
+                    ofstr << "| Planes + ";
+                    switch(el2->t->tr_type) {
+                        case PLANES:
+                            ofstr << "Planes |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                        case TRAIN:
+                            ofstr << "Train |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                        case SHIP:
+                            ofstr << "Ship |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                    }
+                    OutTransport(ofstr, el1->t);
+                    break;
+                case TRAIN:
+                    ofstr << "| Train + ";
+                    switch(el2->t->tr_type) {
+                        case PLANES:
+                            ofstr << "Planes |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                        case TRAIN:
+                            ofstr << "Train |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                        case SHIP:
+                            ofstr << "Ship |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                    }
+                    OutTransport(ofstr, el1->t);
+                    break;
+                case SHIP:
+                    ofstr << "| Ship + ";
+                    switch(el2->t->tr_type) {
+                        case PLANES:
+                            ofstr << "Planes |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                        case TRAIN:
+                            ofstr << "Train |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                        case SHIP:
+                            ofstr << "Ship |" << std::endl;
+                            OutTransport(ofstr, el2->t);
+                            break;
+                    }
+                    OutTransport(ofstr, el1->t);
+                    break;
+            }
+        }
+        el1 = el1->forward;
+    }
+}
+
