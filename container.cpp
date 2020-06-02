@@ -35,6 +35,7 @@ void ContainerClear(container &con) {
         delete el;
         el = next;
     }
+    con.size = 0;
 }
 
 void OutContainer(std::ofstream &stream, container &con) {
