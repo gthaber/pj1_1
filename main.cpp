@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
     }
     ifstream ifst(argv[1]);
     ofstream ofst(argv[2]);
-    if(!ifst.is_open()) {
+    if(!ifst.is_open() || !ofst.is_open()) {
         std::cout << "I/O File is missing.\n";
         return 1;
     }
